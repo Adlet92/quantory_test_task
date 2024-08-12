@@ -1,0 +1,79 @@
+.wrapper {
+  width: 420px;
+  background: #fff;
+  color: #fff;
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+.wrapper h1 {
+  font-size: 36px;
+  text-align: initial;
+  color: grey;
+}
+.wrapper .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: 3px solid grey;
+  font-size: 16px;
+  color: grey;
+  /* padding: 20px 45px 20px 20px; */
+  padding: 10px 20px;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: grey;
+  font-size: 16px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.input-box input:focus + label,
+.input-box input:not(:placeholder-shown) + label {
+  top: 0px;
+  left: 15px;
+  font-size: 16px;
+  color: #666;
+  background: #fff;
+}
+
+.button-container {
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: end;
+  margin-top: 20px;
+}
+
+.button-container button {
+  width: 40%;
+  height: 45px;
+  border: 2px solid grey;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
+}
+
+.cancel-btn {
+  background-color: #fff;
+  color: grey;
+  margin-right: 10px;
+}
+
+.login-btn {
+  background-color: grey;
+  color: #fff;
+}
