@@ -52,8 +52,18 @@ To be fully responsible there is a side bar which will appear by clicking to the
   <img src="./src//Components/Assets/screenshot11.JPG" width="400" />
 </p>
 
-When the username or password is incorrect the error appears
+When the username or password is incorrect the error appears also when there is not written of the input.
 
 <p align="center">
   <img src="./src//Components/Assets/screenshot13.JPG" width="400" />
 </p>
+
+<p align="center">
+  <img src="./src//Components/Assets/screenshot14.JPG" width="400" />
+</p>
+
+<p align="center">
+  <img src="./src//Components/Assets/screenshot15.JPG" width="400" />
+</p>
+
+Cancel button cleans the username, password and error if it appears in the login form.
