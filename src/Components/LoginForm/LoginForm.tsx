@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import { login } from '../../services/authServices';
+import { getCurrentUser, login } from '../../services/authServices';
 import '../LoginForm/LoginForm.css';
 
 interface LoginFormProps {
   setIsLoggedIn: (value: boolean) => void;
+  setUserData: (data: { image: string }) => void;
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({ setIsLoggedIn }) => {
+const LoginForm: React.FC<LoginFormProps> = ({ setIsLoggedIn, setUserData }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
@@ -17,6 +18,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ setIsLoggedIn }) => {
       console.log('Login successful:', data);
       localStorage.setItem('token', data.token);
       localStorage.setItem('refreshToken', data.refreshToken);
+      const user = await getCurrentUser(data.token);
+      setUserData({ image: user.image });
       setIsLoggedIn(true);
     } catch (err) {
       setError('Login failed. Please check your credentials.');

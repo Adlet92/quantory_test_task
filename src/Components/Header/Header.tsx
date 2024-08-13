@@ -7,13 +7,18 @@ interface HeaderProps {
   toggleSidebar: () => void;
   isLoggedIn: boolean;
   onLoginLogout: () => void;
+  userImage?: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ toggleSidebar, isLoggedIn, onLoginLogout }) => {
+const Header: React.FC<HeaderProps> = ({ toggleSidebar, isLoggedIn, onLoginLogout, userImage }) => {
   return (
     <header className='header'>
       <div className='logo'>
-        <img src={LogoIcon} alt='logo' className="logo-icon" />
+      <img
+          src={isLoggedIn && userImage ? userImage : LogoIcon}
+          alt='logo'
+          className="logo-icon"
+        />
       </div>
       <nav className='navStyle'>
         <ul className='regularBar'>
