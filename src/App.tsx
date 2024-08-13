@@ -43,7 +43,11 @@ function App() {
         )}
       </main>
       <Footer />
-      <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      <Sidebar
+        isSidebarOpen={isSidebarOpen}
+        toggleSidebar={toggleSidebar}
+        isLoggedIn={isLoggedIn}
+        onLoginLogout={handleLogout}/>
     </div>
   );
 }

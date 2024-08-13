@@ -31,7 +31,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ setIsLoggedIn }) => {
           handleLogin();
         }}
       >
-        <h1>Login</h1>
+        <h1 style={{ marginBottom: error ? '5px' : '50px' }}>Login</h1>
         {error && <p style={{ color: 'red' }}>{error}</p>}
         <div className='input-box'>
           <input

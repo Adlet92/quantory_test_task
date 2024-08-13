@@ -11,7 +11,7 @@
   font-size: 36px;
   text-align: initial;
   color: grey;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 .wrapper .input-box {
   position: relative;
@@ -28,7 +28,6 @@
   border: 3px solid grey;
   font-size: 16px;
   color: grey;
-  /* padding: 20px 45px 20px 20px; */
   padding: 10px 20px;
 }
 
@@ -54,7 +53,6 @@
 
 .button-container {
   display: flex;
-  /* justify-content: space-between; */
   justify-content: end;
   margin-top: 50px;
 }
