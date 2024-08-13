@@ -20,6 +20,18 @@ function App() {
     } else {
       setLoading(false);
     }
+
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setIsSidebarOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const fetchUserData = async (token: string) => {
@@ -53,13 +65,6 @@ function App() {
         userImage={userData?.image}
       />
       <main className='main-content'>
-        {/* {isLoggedIn ? (
-          <div style={{ textAlign: 'center', marginTop: '20vh' }}>
-            <h1>Login successful</h1>
-          </div>
-        ) : (
-          <LoginForm setIsLoggedIn={setIsLoggedIn} />
-        )} */}
          {loading ? (
           <div className="loading-screen">
             <span className='loader'></span>
