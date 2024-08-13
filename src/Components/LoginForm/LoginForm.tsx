@@ -1,4 +1,3 @@
-// import { FaUser } from 'react-icons/fa';
 import '../LoginForm/LoginForm.css';
 
 const LoginForm = () => {
@@ -9,7 +8,6 @@ const LoginForm = () => {
         <div className='input-box'>
           <input type='text' id='email' required />
           <label htmlFor='email'>Email</label>
-          {/* <FaUser/> */}
         </div>
         <div className='input-box'>
           <input type='password' required />
