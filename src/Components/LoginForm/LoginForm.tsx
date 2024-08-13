@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { getCurrentUser, login } from '../../services/authServices';
 import '../LoginForm/LoginForm.css';
+import FormButtons from './Buttons/Buttons';
+import InputField from './Inputs/Inputs';
 
 interface LoginFormProps {
   setIsLoggedIn: (value: boolean) => void;
@@ -51,33 +53,21 @@ const LoginForm: React.FC<LoginFormProps> = ({ setIsLoggedIn, setUserData }) => 
       >
         <h1 style={{ marginBottom: error ? '5px' : '50px' }}>Login</h1>
         {error && <p style={{ color: 'red' }}>{error}</p>}
-        <div className='input-box'>
-          <input
-              type='text'
-              id='email'
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          <label htmlFor='email'>Email</label>
-        </div>
-        <div className='input-box'>
-          <input
-              type='password'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          <label htmlFor='password'>Password</label>
-        </div>
-        <div className='button-container'>
-        <button
-            type='button'
-            className='cancel-btn'
-            onClick={handleCancel}
-          >
-            Cancel
-          </button>
-          <button type='submit' className='login-btn'>Login</button>
-        </div>
+        <InputField
+          type='text'
+          id='email'
+          value={username}
+          label='Email'
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <InputField
+          type='password'
+          id='password'
+          value={password}
+          label='Password'
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <FormButtons onCancel={handleCancel} onSubmit={handleLogin} />
       </form>
     </div>
   )

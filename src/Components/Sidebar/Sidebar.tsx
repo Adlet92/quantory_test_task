@@ -4,6 +4,7 @@ import ContactIcon from '../Assets/contact-icon.svg';
 import HomeIcon from '../Assets/home-icon.svg';
 import LogoutIcon from '../Assets/logout-icon.svg';
 import './Sidebar.css';
+import SidebarItem from './SidebarItems';
 
 interface SidebarProps {
   isSidebarOpen: boolean;
@@ -16,40 +17,21 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar, isLogge
   return (
     <div className={`sidebar ${isSidebarOpen ? 'active' : ''}`}>
       <ul>
-        <li>
-          <a href="#home">
-            <img src={HomeIcon} alt="Home" className="icon" />
-          </a>
-        </li>
-        <li>
-          <a href="#contact">
-            <img src={ContactIcon} alt="Contact" className="icon" />
-          </a>
-        </li>
-        <li>
-          <a href="#about">
-            <img src={AboutIcon} alt="About" className="icon" />
-          </a>
-        </li>
+        <SidebarItem href="#home" iconSrc={HomeIcon} altText="Home" />
+        <SidebarItem href="#contact" iconSrc={ContactIcon} altText="Contact" />
+        <SidebarItem href="#about" iconSrc={AboutIcon} altText="About" />
         {isLoggedIn && (
-          <li>
-            <a
-              href="#logout"
-              onClick={(e) => {
-                e.preventDefault();
-                onLoginLogout();
-                toggleSidebar();
-              }}
-            >
-              <img src={LogoutIcon} alt="Logout" className="icon" />
-            </a>
-          </li>
+          <SidebarItem
+            href="#logout"
+            iconSrc={LogoutIcon}
+            altText="Logout"
+            onClick={() => {
+              onLoginLogout();
+              toggleSidebar();
+            }}
+          />
         )}
-        <li>
-          <a href="#close" onClick={toggleSidebar}>
-            <img src={CloseIcon} alt="Close" className="icon" />
-          </a>
-        </li>
+        <SidebarItem href="#close" iconSrc={CloseIcon} altText="Close" onClick={toggleSidebar} />
       </ul>
     </div>
   );
