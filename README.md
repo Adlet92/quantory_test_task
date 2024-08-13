@@ -51,3 +51,9 @@ To be fully responsible there is a side bar which will appear by clicking to the
 <p align="center">
   <img src="./src//Components/Assets/screenshot11.JPG" width="400" />
 </p>
+
+When the username or password is incorrect the error appears
+
+<p align="center">
+  <img src="./src//Components/Assets/screenshot13.JPG" width="400" />
+</p>

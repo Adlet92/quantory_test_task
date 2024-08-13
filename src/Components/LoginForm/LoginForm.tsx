@@ -13,6 +13,15 @@ const LoginForm: React.FC<LoginFormProps> = ({ setIsLoggedIn, setUserData }) => 
   const [error, setError] = useState<string | null>(null);
 
   const handleLogin = async () => {
+    if (!username) {
+      setError('Please write your username.');
+      return;
+    }
+    if (!password) {
+      setError('Please write your password.');
+      return;
+    }
+
     try {
       const data = await login(username, password);
       console.log('Login successful:', data);
@@ -24,6 +33,12 @@ const LoginForm: React.FC<LoginFormProps> = ({ setIsLoggedIn, setUserData }) => 
     } catch (err) {
       setError('Login failed. Please check your credentials.');
     }
+  };
+
+  const handleCancel = () => {
+    setUsername('');
+    setPassword('');
+    setError(null);
   };
 
   return (
@@ -40,7 +55,6 @@ const LoginForm: React.FC<LoginFormProps> = ({ setIsLoggedIn, setUserData }) => 
           <input
               type='text'
               id='email'
-              required
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
@@ -49,14 +63,19 @@ const LoginForm: React.FC<LoginFormProps> = ({ setIsLoggedIn, setUserData }) => 
         <div className='input-box'>
           <input
               type='password'
-              required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           <label htmlFor='password'>Password</label>
         </div>
         <div className='button-container'>
-          <button type='button' className='cancel-btn'>Cancel</button>
+        <button
+            type='button'
+            className='cancel-btn'
+            onClick={handleCancel}
+          >
+            Cancel
+          </button>
           <button type='submit' className='login-btn'>Login</button>
         </div>
       </form>
