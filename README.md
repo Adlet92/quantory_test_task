@@ -17,7 +17,7 @@ By opening the following link http://localhost:3000 the web page should be opene
 The navigation bar buttons doesnt navigate you to another pages due to there werent requirements (descriptions) about it but there is hover and design as in the task.
 
 <p align="center">
-  <img src="./src//Components/Assets/screenshot9.JPG" width="400" />
+  <img src="./src//Components/Assets/screenshot2.JPG" width="400" />
 </p>
 
 The requirements were to provide integration with dummy service. Authentification is possible by using username and password because it was provided in dummy service, but by the template of the task first input was labeled as email. Therefore its labeled as email.
