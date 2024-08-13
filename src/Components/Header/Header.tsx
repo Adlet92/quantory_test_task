@@ -5,9 +5,11 @@ import './Header.css';
 
 interface HeaderProps {
   toggleSidebar: () => void;
+  isLoggedIn: boolean;
+  onLoginLogout: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
+const Header: React.FC<HeaderProps> = ({ toggleSidebar, isLoggedIn, onLoginLogout }) => {
   return (
     <header className='header'>
       <div className='logo'>
@@ -27,7 +29,9 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
           </li>
         </ul>
       </nav>
-      <button className='login-btn-nav'>Login</button>
+      <button className='login-btn-nav' onClick={onLoginLogout}>
+        {isLoggedIn ? 'Logout' : 'Login'}
+      </button>
     </header>
   );
 };
