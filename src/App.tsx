@@ -34,7 +34,7 @@ function App() {
             </a></li>
           </ul>
         </nav>
-        <button className='login-btn'>Login</button>
+        <button className='login-btn-nav'>Login</button>
       </header>
       <main className='main-content'>
         <LoginForm />

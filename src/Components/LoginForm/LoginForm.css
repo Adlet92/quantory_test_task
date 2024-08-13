@@ -1,14 +1,17 @@
 .wrapper {
   width: 420px;
+  height: 380px;
   background: #fff;
   color: #fff;
   border-radius: 10px;
   padding: 30px 40px;
+  max-width: 400px;
 }
 .wrapper h1 {
   font-size: 36px;
   text-align: initial;
   color: grey;
+  margin-bottom: 50px;
 }
 .wrapper .input-box {
   position: relative;
@@ -53,7 +56,7 @@
   display: flex;
   /* justify-content: space-between; */
   justify-content: end;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .button-container button {
@@ -76,4 +79,17 @@
 .login-btn {
   background-color: grey;
   color: #fff;
+}
+@media (max-width: 768px) {
+  .main-content {
+    padding: 10px;
+  }
+  .wrapper {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .button-container button{
+    width: 45%;
+  }
 }
